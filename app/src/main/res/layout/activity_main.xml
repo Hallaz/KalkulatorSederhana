@@ -1,25 +1,108 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:fitsSystemWindows="true"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
-        android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
+    <TextView
+        android:id="@+id/textInfoMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Pilih Mode" />
 
-        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
-            android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <Spinner
+        android:id="@+id/spinnerMode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/textInfoMode"
+        android:spinnerMode="dialog" />
 
-    </android.support.design.widget.AppBarLayout>
+    <View
+        android:id="@+id/v1"
+        android:layout_width="0dip"
+        android:layout_height="0dip"
+        android:layout_below="@id/spinnerMode"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="6dp"
+        android:background="@android:color/black" />
 
-    <include layout="@layout/content_main" />
+    <TextView
+        android:id="@+id/textInfoAngka1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/spinnerMode"
+        android:layout_toLeftOf="@id/v1"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="Angka Pertama" />
 
-    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_dialog_email" />
+    <TextView
+        android:id="@+id/textInfoAngka2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/spinnerMode"
+        android:layout_toRightOf="@id/v1"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="Angka Kedua" />
 
-</android.support.design.widget.CoordinatorLayout>
+    <EditText
+        android:id="@+id/editTextAngka1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textInfoAngka1"
+        android:layout_toLeftOf="@id/v1"
+        android:ems="10"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextAngka2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textInfoAngka1"
+        android:layout_toRightOf="@id/v1"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textInfoHasil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/editTextAngka1"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="Hasil" />
+
+    <TextView
+        android:id="@+id/textViewHasil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textInfoHasil"
+        android:gravity="center"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/buttonHitung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewHasil"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="8dp"
+        android:text="Hitung" />
+
+</RelativeLayout>
